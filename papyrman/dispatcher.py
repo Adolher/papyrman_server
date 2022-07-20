@@ -40,13 +40,13 @@ class Dispatcher:
         self.init_clui()
 
         self.logger.info(f"ID={args}")
-        ui_thread = threading.Thread(target=self.clui.show_profile(column='profile_id', value=args['id']))
+        ui_thread = threading.Thread(target=self.clui.show_profile(column='profile_id', value=args[0]['id']))
         ui_thread.start()
 
     def dp(self, *args):
         self.logger.info(f"{args}")
         self.init_clui()
-        ui_thread = threading.Thread(target=self.clui.delete_profile(column='profile_id', value=args.id))
+        ui_thread = threading.Thread(target=self.clui.delete_profile(column='profile_id', value=args[0]['id']))
         ui_thread.start()
 
     def ep(self, *args):
@@ -66,7 +66,7 @@ class Dispatcher:
     def dt(self, *args):
         self.logger.info(f"{sys.argv[1:]}")
         self.init_clui()
-        ui_thread = threading.Thread(target=self.clui.delete_target(column='target_id', value=args.id))
+        ui_thread = threading.Thread(target=self.clui.delete_target(column='target_id', value=args[0]['id']))
         ui_thread.start()
 
     def crdb(self, *args):

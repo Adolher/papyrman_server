@@ -1,6 +1,5 @@
 import argparse
 import logging
-import sys
 
 from dispatcher import Dispatcher
 from utils import Logger
@@ -24,11 +23,13 @@ class Papyrman:
 
         self.logger = self.start_logger(self.args.ll, self.args.lf, self.args.lt)
 
-        self.logger.logger.info(f"{self.args} ID={self.args.id}")
+        self.logger.logger.info(f"{self.args}")
 
-        if 'fun' in (vars(self.args)).keys():
-            self.logger.logger.info(f"")
-            self.args.fun(self.args)
+        self.args = vars(self.args)
+
+        if 'fun' in self.args.keys():
+            self.logger.logger.info(f"{self.args}")
+            self.args['fun'](self.args)
 
     def add_pars_args(self):
         help_msg = "Specifies the Log-Level. Default is 'WARNING'"
