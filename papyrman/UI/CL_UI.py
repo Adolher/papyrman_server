@@ -10,60 +10,11 @@ class CLUI:
         self.logger.info(f"{sys.argv[1:]}")
         self.ini = ini
         self.db = db
-        # self.profile_menu()
 
         # menu als argparse
         # -> papyrman edit -profile -> show_profiles() -> enter ID -> edit_profile()
         # -> papyrman create -> create_profile
         # -> papyrman delete -> show_profiles -> enter ID -> delete:profile()
-
-    def profile_menu(self):
-        self.logger.info("")
-        menu = "1 - Create Profile\n" \
-               "2 - Show Profiles\n" \
-               "3 - Show Profile\n" \
-               "4 - Delete Profile\n" \
-               "5 - Add Target to\n" \
-               "6 - Edit Profile\n" \
-               "7 - Delete Target\n" \
-               "8 - Create DB\n" \
-               "9 - Connect to DB\n" \
-               "0 - Drop DB\n" \
-               "10- Edit Target"
-        user_input = input(menu)
-
-        if user_input == "1":
-            self.create_profile()
-            self.profile_menu()
-        elif user_input == "2":
-            self.show_profiles()
-            self.profile_menu()
-        elif user_input == "3":
-            self.show_profile('profile_id', input("Enter Profile ID: "))
-            self.profile_menu()
-        elif user_input == "4":
-            self.delete_profile('profile_id', int(input("Enter Profil_ID: ")))
-            self.profile_menu()
-        elif user_input == "5":
-            self.create_target(int(input("Enter Profile_ID: ")))
-            self.profile_menu()
-        elif user_input == "6":
-            self.update_profile()
-            self.profile_menu()
-        elif user_input == "7":
-            self.delete_target('target_ID', int(input("Enter Target_ID: ")))
-            self.profile_menu()
-        elif user_input == "8":
-            self.create_db()
-            self.profile_menu()
-        elif user_input == "9":
-            self.connect_db()
-            self.profile_menu()
-        elif user_input == "0":
-            self.drop_db()
-            self.profile_menu()
-        else:
-            self.wrong_choice()
 
     #####################
     # Profile functions #
