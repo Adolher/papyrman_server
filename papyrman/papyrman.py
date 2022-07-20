@@ -23,6 +23,8 @@ class Papyrman:
 
         self.logger = self.start_logger(self.args.ll, self.args.lf, self.args.lt)
 
+
+
         self.logger.logger.info(f"{self.args}")
 
         self.args = vars(self.args)

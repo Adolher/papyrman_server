@@ -17,78 +17,89 @@ class Dispatcher:
         self.clui = None
         self.observer = None
 
-    def sini(self, *args):
-        self.logger.info(f"{sys.argv[1:]}")
+    # show papyrman.ini
+    def sini(self, args):
+        self.logger.info(f"{args}")
         self.ini = ConfigParser('papyrman.ini')
         ui_thread = threading.Thread(target=self.ini.show_config())
         ui_thread.start()
 
-    def cp(self, *args):
-        self.logger.info(f"{sys.argv[1:]}")
+    # create profile
+    def cp(self, args):
+        self.logger.info(f"{args}")
         self.init_clui()
         ui_thread = threading.Thread(target=self.clui.create_profile())
         ui_thread.start()
 
-    def sps(self, *args):
-        self.logger.info(f"{sys.argv[1:]}")
+    # show profiles
+    def sps(self, args):
+        self.logger.info(f"{args}")
         self.init_clui()
         ui_thread = threading.Thread(target=self.clui.show_profiles())
         ui_thread.start()
 
-    def sp(self, *args):
+    # show profile -id <profile_id>
+    def sp(self, args):
         self.logger.info(f"{args}")
         self.init_clui()
-
-        self.logger.info(f"ID={args}")
-        ui_thread = threading.Thread(target=self.clui.show_profile(column='profile_id', value=args[0]['id']))
+        ui_thread = threading.Thread(target=self.clui.show_profile(column='profile_id', value=args['id']))
         ui_thread.start()
 
-    def dp(self, *args):
+    # delete profile -id <profile_id>
+    def dp(self, args):
         self.logger.info(f"{args}")
         self.init_clui()
-        ui_thread = threading.Thread(target=self.clui.delete_profile(column='profile_id', value=args[0]['id']))
+        ui_thread = threading.Thread(target=self.clui.delete_profile(column='profile_id', value=args['id']))
         ui_thread.start()
 
-    def ep(self, *args):
-        self.logger.info(f"{sys.argv[1:]}")
+    # edit profile -id <profile_id>
+    def ep(self, args):
+        self.logger.info(f"{args}")
         pass
 
+    # add target to -id <profile_id>
     def att(self, args):
-        self.logger.info(f"{sys.argv[1:]}")
+        self.logger.info(f"{args}")
         self.init_clui()
-        ui_thread = threading.Thread(target=self.clui.create_target(profile_id=args.id))
+        ui_thread = threading.Thread(target=self.clui.create_target(profile_id=args['id']))
         ui_thread.start()
 
-    def et(self, *args):
-        self.logger.info(f"{sys.argv[1:]}")
+    # edit target -id <target_id>
+    def et(self, args):
+        self.logger.info(f"{args}")
         pass
 
-    def dt(self, *args):
-        self.logger.info(f"{sys.argv[1:]}")
+    # delete target -id <target_id>
+    def dt(self, args):
+        self.logger.info(f"{args}")
         self.init_clui()
-        ui_thread = threading.Thread(target=self.clui.delete_target(column='target_id', value=args[0]['id']))
+        ui_thread = threading.Thread(target=self.clui.delete_target(column='target_id', value=args['id']))
         ui_thread.start()
 
-    def crdb(self, *args):
-        self.logger.info(f"{sys.argv[1:]}")
+    # create database (accordance .ini file)
+    def crdb(self, args):
+        self.logger.info(f"{args}")
         self.init_clui()
         ui_thread = threading.Thread(target=self.clui.create_db())
         ui_thread.start()
 
-    def codb(self, *args):
-        self.logger.info(f"{sys.argv[1:]}")
+    # connect to database
+    def codb(self, args):
+        self.logger.info(f"{args}")
         self.init_clui()
         ui_thread = threading.Thread(target=self.clui.connect_db())
         ui_thread.start()
 
-    def ddb(self, *args):
-        self.logger.info(f"{sys.argv[1:]}")
+    # delete database
+    def ddb(self, args):
+        self.logger.info(f"{args}")
         self.init_clui()
         ui_thread = threading.Thread(target=self.clui.drop_db())
         ui_thread.start()
 
-    def run(self, *args):
-        self.logger.info(f"{sys.argv[1:]}")
+    # run observer
+    def run(self, args):
+        self.logger.info(f"{args}")
         if self.ini is None:
             self.ini = ConfigParser('papyrman.ini')
         if self.db is None:
@@ -102,8 +113,9 @@ class Dispatcher:
             self.observer.observer.stop()
             self.observer.observer.join()
 
+    # stop observer
     def stop(self, *args):
-        self.logger.info(f"{sys.argv[1:]}")
+        self.logger.info(f"{args}")
         pass
 
     def init_clui(self):
@@ -116,5 +128,5 @@ class Dispatcher:
             self.clui = CLUI(self.ini, self.db)
 
     def version(self, *args):
-        self.logger.info(f"{sys.argv[1:]}")
+        self.logger.info(f"{args}")
         print("version nummer sonstwas")    # ToDo: version aus ini lesen; mit argparse-version realisieren

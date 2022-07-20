@@ -1,7 +1,8 @@
 # ToDo: Better User-input check
 # ToDo: if show_profiles has no results -> say that it has no results
 
-import logging, sys
+import logging
+import sys
 
 
 class CLUI:
@@ -167,8 +168,3 @@ class CLUI:
             self.db.drop_db()
         else:
             self.logger.info("")
-
-    def wrong_choice(self):
-        self.logger.info("")
-        print("Wrong")
-        self.profile_menu()
