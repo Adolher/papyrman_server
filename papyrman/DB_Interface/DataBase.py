@@ -10,7 +10,7 @@ from sqlalchemy import ForeignKey
 class DataBase:
     def __init__(self, ini):
         self.logger = logging.getLogger('papyrman')
-        self.logger.info("")
+        self.logger.debug(f"ini = {vars(ini)}")
         self.ini = ini
         self.dialect = self.ini.configs['DB']['dialect']
         self.db_user = self.ini.configs['DB']['db_user']
@@ -26,14 +26,14 @@ class DataBase:
         self.meta = None
 
         self.connect_with_engine(self.db_name)
-        self.logger.info("")
+        self.logger.debug(f"{self.db_name} is initialized. self = {vars(self)}")
 
     #####################
     #  Data Definition  #
     #####################
 
     def insert_entety(self, table, *values):
-        self.logger.info("")
+        self.logger.debug(f"table = {table}, *values = {values}")
         table_obj = self.get_table_obj(table)
         if table_obj is not None:
             stmt = table_obj.insert().values(values)
@@ -42,7 +42,7 @@ class DataBase:
         return self.execute_statement(stmt)
 
     def select_entety(self, table, column=None, value=None):    # SELECT * FROM table WHERE column = value
-        self.logger.info("")
+        self.logger.debug(f"table = {table}, column = {column}, value = {value}")
         table_obj = self.get_table_obj(table)
         if column is not None:
             column_obj = sqlalchemy.Column(column, self.meta)
@@ -53,18 +53,18 @@ class DataBase:
 
     # ToDo: update_entety()
     def update_entety(self):
-        self.logger.info("")
+        self.logger.debug("")
         pass
 
     def delete_entety(self, table, column, value):
-        self.logger.info("")
+        self.logger.debug(f"table = {table}, column = {column}, value = {value}")
         table_obj = self.get_table_obj(table)
         column_obj = sqlalchemy.Column(column, self.meta)
         stmt = sqlalchemy.delete(table_obj).where(column_obj == value)
         self.execute_statement(stmt)
 
     def get_table_obj(self, table_name):
-        self.logger.info("")
+        self.logger.debug(f"table_name = {table_name}")
         if table_name.startswith("DB_"):
             table_name = table_name.replace("DB_", "")
         try:
@@ -75,7 +75,7 @@ class DataBase:
         return table_obj
 
     def execute_statement(self, statement):
-        self.logger.info("")
+        self.logger.debug(f"statement = {statement}")
         try:
             result = self.connection[2].execute(statement)
             return result
@@ -94,7 +94,7 @@ class DataBase:
     #####################
 
     def create_db(self):
-        self.logger.info("")
+        self.logger.debug("")
         self.connect_with_engine()
         try:
             self.engine.execute("CREATE DATABASE " + self.db_name)
@@ -106,12 +106,12 @@ class DataBase:
                     self.create_table(table)
         except ProgrammingError as e:
             if e.orig.args[0] == 1007:
-                self.logger.critical(f"{e.orig}")
+                self.logger.error(f"{e.orig}")
         except OperationalError as e:
             self.logger.critical(f"{e.orig}")
 
     def drop_db(self):
-        self.logger.info("")
+        self.logger.debug("")
         self.connect_with_engine()
         if self.connection[0] and self.connection[1]:
             try:
@@ -124,7 +124,7 @@ class DataBase:
             print(self.connection[2])
 
     def create_table(self, table_name):
-        self.logger.info("")
+        self.logger.debug(f"table_name = {table_name}")
         raw_table_name = table_name.replace("DB_", "")
         table = sqlalchemy.Table(raw_table_name, self.meta)
         for c in self.ini.configs[table_name]:
@@ -199,7 +199,7 @@ class DataBase:
             self.logger.critical(f"{e.orig}")
 
     def drop_table(self, table):
-        self.logger.info("")
+        self.logger.debug(f"table = {table}")
         table_obj = self.get_table_obj(table)
         try:
             table_obj.drop(bind=self.engine)
@@ -213,7 +213,7 @@ class DataBase:
     #################
 
     def connect_with_engine(self, db_name=None):
-        self.logger.info("")
+        self.logger.debug(f"db_name = {db_name}")
         self.engine = self.create_engine(db_name)
         self.meta = sqlalchemy.MetaData(self.engine)
         self.connection = self.connect_db()
@@ -224,23 +224,24 @@ class DataBase:
                 self.logger.critical(f"{e.orig}")
 
     def create_engine(self, db_name=None):
-        self.logger.info("")
+        self.logger.debug(f"db_name = {db_name}")
         conn = self.dialect + '://' + self.db_user + ':' + self.db_password + '@' + self.db_host + ':' + self.db_port
         if db_name:
             conn += '/' + db_name
         return sqlalchemy.create_engine(conn)
 
     def connect_db(self):
-        self.logger.info("")
+        self.logger.info(f"Try to connect to {self.db_name}")
         # [Database, Server, result]
         try:
             connection = [True, True, self.engine.connect()]
+            self.logger.info(f"Connection to {self.db_name} is established.")
         except OperationalError as e:
             if e.orig.args[0] == 1049:  # (1049, "Unknown database 'papyrman_profiles'")
                 self.logger.critical(f"{e.orig}")
                 connection = [False, True, e.orig]
             elif e.orig.args[0] == 2002:  # (2002, "Can't connect to server on 'localhost' (10061)")
-                self.logger.critical(f"{e.orig}")
+                self.logger.critical(f"{e.orig} Please make sure that your DB-Server is running")
                 connection = [False, False, e.orig]  # Maybe create a Backup (sqlight)
             else:
                 self.logger.critical(f"{e.orig}")

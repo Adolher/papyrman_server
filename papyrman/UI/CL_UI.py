@@ -1,4 +1,4 @@
-# ToDo: Better User-input check
+# ToDo: Better User-input check ( names not only alpha-num)
 # ToDo: if show_profiles has no results -> say that it has no results
 
 import logging
@@ -8,22 +8,16 @@ import sys
 class CLUI:
     def __init__(self, ini, db):
         self.logger = logging.getLogger('papyrman')
-        self.logger.info(f"{sys.argv[1:]}")
+        self.logger.debug(f"ini = {vars(ini)}, db = {vars(db)}")
         self.ini = ini
         self.db = db
-
-        # menu als argparse
-        # -> papyrman edit -profile -> show_profiles() -> enter ID -> edit_profile()
-        # -> papyrman create -> create_profile
-        # -> papyrman delete -> show_profiles -> enter ID -> delete:profile()
 
     #####################
     # Profile functions #
     #####################
 
     def create_profile(self):   # eingabe Profile + Target + auswahl der Settings
-        self.logger.info(f"{sys.argv[1:]}")
-        if self.db.connection[0]:
+        if self.db.connection[0]:   # [Database, Server, result]
             profile = {}
             table_name = "DB_profiles"
             table = self.ini.configs[table_name]
@@ -45,21 +39,20 @@ class CLUI:
                     if input("Add further target? y/N ").lower() != "y":
                         break
         else:
-            self.logger.info("")
+            self.logger.error(f"Database {self.db.db_name} does not exist. Use 'create-db to create your Database!")
 
     def show_profiles(self):
-        self.logger.info(f"{sys.argv[1:]}")
-        if self.db.connection[0]:
+        if self.db.connection[0]:   # [Database, Server, result]
             result = self.db.select_entety("profiles")
             if result:
                 for entety in result.mappings():
                     print(entety)
         else:
-            self.logger.info("")
+            self.logger.error(f"Database {self.db.db_name} does not exist. Use 'create-db to create your Database!")
 
     def show_profile(self, column, value):
-        self.logger.info("")
-        if self.db.connection[0]:
+        self.logger.debug(f"column = {column}, value = {value}")
+        if self.db.connection[0]:   # [Database, Server, result]
             profile = self._select_profile(column, value)
             print()
             if profile:
@@ -67,29 +60,28 @@ class CLUI:
                     print(str(key) + " : " + str(profile[key]))
                 self._show_targets(column, value)
             else:
-                print(f"No Profile with ID {value}")
+                self.logger.error(f"No Profile with ID {value}")
         else:
-            self.logger.info("")
+            self.logger.error(f"Database {self.db.db_name} does not exist. Use 'create-db to create your Database!")
 
     def update_profile(self):
-        self.logger.info("")
-        if self.db.connection[0]:
+        if self.db.connection[0]:   # [Database, Server, result]
             pass
         else:
-            self.logger.info("")
+            self.logger.error(f"Database {self.db.db_name} does not exist. Use 'create-db to create your Database!")
 
     def delete_profile(self, column, value):
-        self.logger.info("")
-        if self.db.connection[0]:
+        self.logger.debug(f"column = {column}, value = {value}")
+        if self.db.connection[0]:   # [Database, Server, result]
             targets = self.db.select_entety("targets", column, value)
             for target in targets:
                 self.delete_target("target_id", target[0])
             self.db.delete_entety("profiles", column, value)
         else:
-            self.logger.info("")
+            self.logger.error(f"Database {self.db.db_name} does not exist. Use 'create-db to create your Database!")
 
     def _select_profile(self, column, value):
-        self.logger.info("")
+        self.logger.debug(f"column = {column}, value = {value}")
         result = self.db.select_entety("profiles", column, value).fetchone()
         return result
 
@@ -98,8 +90,8 @@ class CLUI:
     #####################
 
     def create_target(self, profile_id):
-        self.logger.info("")
-        if self.db.connection[0]:
+        self.logger.debug(f"profile_id = {profile_id}")
+        if self.db.connection[0]:   # [Database, Server, result]
             if self._select_profile('profile_id', profile_id):
                 target = {}
                 table_name = "DB_targets"
@@ -116,12 +108,12 @@ class CLUI:
                             target[key] = None
                 self.db.insert_entety(table_name.replace("DB_", ""), target)
             else:
-                print(f"No Profile with ID {profile_id}")
+                self.logger.error(f"No Profile with ID {profile_id}")
         else:
-            self.logger.info("")
+            self.logger.error(f"Database {self.db.db_name} does not exist. Use 'create-db to create your Database!")
 
     def _show_targets(self, column, value):
-        self.logger.info("")
+        self.logger.debug(f"column = {column}, value = {value}")
         targets = self.db.select_entety("targets", column, value)
         for target in targets.mappings():
             for key in targets.keys():
@@ -130,41 +122,40 @@ class CLUI:
             print()
 
     def update_target(self):
-        self.logger.info("")
-        if self.db.connection[0]:
+        if self.db.connection[0]:   # [Database, Server, result]
             pass
         else:
-            self.logger.info("")
+            self.logger.error(f"Database {self.db.db_name} does not exist. Use 'create-db to create your Database!")
 
     def delete_target(self, column, value):
-        self.logger.info("")
-        if self.db.connection[0]:
+        self.logger.debug(f"column = {column}, value = {value}")
+        if self.db.connection[0]:   # [Database, Server, result]
             if self._select_target(column, value):
                 self.db.delete_entety("targets", column, value)
             else:
-                print(f"No Target with ID {value}")
+                self.logger.error(f"No Target with ID {value}")
         else:
-            self.logger.info("")
+            self.logger.error(f"Database {self.db.db_name} does not exist. Use 'create-db to create your Database!")
 
     def _select_target(self, column, value):
-        self.logger.info("")
+        self.logger.debug(f"column = {column}, value = {value}")
         result = self.db.select_entety("targets", column, value).fetchone()
         return result
 
     def create_db(self):
-        self.logger.info("")
-        if self.db.connection[1]:
+        self.logger.info("Database will be created...")
+        if self.db.connection[1]:   # [Database, Server, result]
             self.db.create_db()
         else:
-            self.logger.info("")
+            self.logger.critical(f"Connection to DB-Server == {self.db.connection[1]}. Please make sure that your Server is running")
 
     def connect_db(self):
-        self.logger.info("")
+        self.logger.info(f"Connection to {self.ini.configs['DB']['db_name']} is being established")
         self.db.connect_with_engine(self.ini.configs['DB']['db_name'])
 
     def drop_db(self):
-        self.logger.info("")
-        if self.db.connection[1]:
+        self.logger.debug("")
+        if self.db.connection[1]:   # [Database, Server, result]
             self.db.drop_db()
         else:
-            self.logger.info("")
+            self.logger.critical(f"Connection to DB-Server == {self.db.connection[1]}. Please make sure that your Server is running")

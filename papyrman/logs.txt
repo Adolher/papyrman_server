@@ -1,0 +1,546 @@
+	INFO | Set File-Log Level to 20
+	INFO | Set Terminal-Log Level to 30
+	INFO | Initialized Papyrman Server
+	INFO | Read Data from papyrman.ini
+	INFO | Set File-Log Level to 20
+	INFO | Set Terminal-Log Level to 30
+	INFO | Initialized Papyrman Server
+	INFO | Read Data from papyrman.ini
+	INFO | Set File-Log Level to 20
+	INFO | Set Terminal-Log Level to 30
+	INFO | Initialized Papyrman Server
+	INFO | Read Data from papyrman.ini
+	INFO | Try to connect to papyrman_profiles
+	CRITICAL | (2002, "Can't connect to server on 'localhost' (10061)")
+	ERROR | Database papyrman_profiles does not exist. Use 'create-db to create your Database!
+2022-07-20 13:14:46,636 | INFO |
+	| Thread-ID: 16612 | Thread-Name: MainThread
+	| Process-ID: 10716 | Process-Name: MainProcess
+	| File: Logger.py | Line: 26
+	| Logger.__init__()
+	| Set File-Log Level to 10
+	| None
+	|
+2022-07-20 13:14:46,637 | INFO |
+	| Thread-ID: 16612 | Thread-Name: MainThread
+	| Process-ID: 10716 | Process-Name: MainProcess
+	| File: Logger.py | Line: 27
+	| Logger.__init__()
+	| Set Terminal-Log Level to 10
+	| None
+	|
+2022-07-20 13:14:46,638 | DEBUG |
+	| Thread-ID: 16612 | Thread-Name: MainThread
+	| Process-ID: 10716 | Process-Name: MainProcess
+	| File: papyrman.py | Line: 28
+	| papyrman.__init__()
+	| {'lf': 'info', 'lt': 'warning', 'll': 'debug', 'fun': <bound method Dispatcher.cp of <dispatcher.Dispatcher object at 0x000001770AA67D30>>}
+	| None
+	|
+2022-07-20 13:14:46,640 | INFO |
+	| Thread-ID: 16612 | Thread-Name: MainThread
+	| Process-ID: 10716 | Process-Name: MainProcess
+	| File: papyrman.py | Line: 29
+	| papyrman.__init__()
+	| Initialized Papyrman Server
+	| None
+	|
+2022-07-20 13:14:46,641 | DEBUG |
+	| Thread-ID: 16612 | Thread-Name: MainThread
+	| Process-ID: 10716 | Process-Name: MainProcess
+	| File: dispatcher.py | Line: 27
+	| dispatcher.cp()
+	| args = {'lf': 'info', 'lt': 'warning', 'll': 'debug', 'fun': <bound method Dispatcher.cp of <dispatcher.Dispatcher object at 0x000001770AA67D30>>}
+	| None
+	|
+2022-07-20 13:14:46,642 | DEBUG |
+	| Thread-ID: 16612 | Thread-Name: MainThread
+	| Process-ID: 10716 | Process-Name: MainProcess
+	| File: dispatcher.py | Line: 120
+	| dispatcher.init_clui()
+	| 
+	| None
+	|
+2022-07-20 13:14:46,643 | INFO |
+	| Thread-ID: 16612 | Thread-Name: MainThread
+	| Process-ID: 10716 | Process-Name: MainProcess
+	| File: ConfigParser.py | Line: 8
+	| ConfigParser.__init__()
+	| Read Data from papyrman.ini
+	| None
+	|
+2022-07-20 13:14:46,645 | DEBUG |
+	| Thread-ID: 16612 | Thread-Name: MainThread
+	| Process-ID: 10716 | Process-Name: MainProcess
+	| File: DataBase.py | Line: 13
+	| DataBase.__init__()
+	| ini = {'logger': <Logger papyrman (DEBUG)>, 'configs': {'version': {'prog_name': 'Papyrman Server', 'version': '2.0.0'}, 'routes': {'inbox_path': 'C:\\\\Users\\\\Adalher\\\\Desktop\\\\Test_Ordner_Inbox'}, 'DB': {'dialect': 'mysql', 'db_user': 'root', 'db_password': '', 'db_host': 'localhost', 'db_port': '3306', 'db_name': 'papyrman_profiles'}, 'DB_defaults': {'varchar_length': '50'}, 'DB_profiles': {'profile_id': 'Integer, primary_key = True', 'profile_name': 'String, nullable = False', 'profile_description': 'String(2711)'}, 'DB_settings': {'setting_id': 'Integer, primary_key = True', 'setting_name': 'String', 'setting_value': 'String'}, 'DB_profile_settings': {'profile_settings_id': 'Integer, primary_key = True', 'setting_id': 'Integer, ForeignKey("DB_settings.setting_ID")', 'profile_id': 'Integer, ForeignKey("DB_profiles.profile_ID")'}, 'DB_targets': {'target_id': 'Integer, primary_key = True', 'target_name': 'String, nullable = False', 'profile_id': 'Integer, ForeignKey("DB_profiles.profile_ID")', 'target_description': 'String', 'target_type': 'String', 'target_path': 'String'}}}
+	| None
+	|
+2022-07-20 13:14:46,647 | DEBUG |
+	| Thread-ID: 16612 | Thread-Name: MainThread
+	| Process-ID: 10716 | Process-Name: MainProcess
+	| File: DataBase.py | Line: 216
+	| DataBase.connect_with_engine()
+	| db_name = papyrman_profiles
+	| None
+	|
+2022-07-20 13:14:46,648 | DEBUG |
+	| Thread-ID: 16612 | Thread-Name: MainThread
+	| Process-ID: 10716 | Process-Name: MainProcess
+	| File: DataBase.py | Line: 227
+	| DataBase.create_engine()
+	| db_name = papyrman_profiles
+	| None
+	|
+2022-07-20 13:14:46,691 | INFO |
+	| Thread-ID: 16612 | Thread-Name: MainThread
+	| Process-ID: 10716 | Process-Name: MainProcess
+	| File: DataBase.py | Line: 234
+	| DataBase.connect_db()
+	| Try to connect to papyrman_profiles
+	| None
+	|
+2022-07-20 13:14:50,817 | CRITICAL |
+	| Thread-ID: 16612 | Thread-Name: MainThread
+	| Process-ID: 10716 | Process-Name: MainProcess
+	| File: DataBase.py | Line: 244
+	| DataBase.connect_db()
+	| (2002, "Can't connect to server on 'localhost' (10061)")
+	| None
+	|
+2022-07-20 13:14:50,823 | DEBUG |
+	| Thread-ID: 16612 | Thread-Name: MainThread
+	| Process-ID: 10716 | Process-Name: MainProcess
+	| File: DataBase.py | Line: 29
+	| DataBase.__init__()
+	| papyrman_profiles is initialized. self = {'logger': <Logger papyrman (DEBUG)>, 'ini': <utils.ConfigParser.ConfigParser object at 0x000001770D26ECB0>, 'dialect': 'mysql', 'db_user': 'root', 'db_password': '', 'db_host': 'localhost', 'db_port': '3306', 'db_name': 'papyrman_profiles', 'varchar_length': 50, 'connection': [False, False, OperationalError(2002, "Can't connect to server on 'localhost' (10061)")], 'engine': Engine(mysql://root:***@localhost:3306/papyrman_profiles), 'meta': MetaData(bind=Engine(mysql://root:***@localhost:3306/papyrman_profiles))}
+	| None
+	|
+2022-07-20 13:14:50,830 | DEBUG |
+	| Thread-ID: 16612 | Thread-Name: MainThread
+	| Process-ID: 10716 | Process-Name: MainProcess
+	| File: CL_UI.py | Line: 11
+	| CL_UI.__init__()
+	| ini = {'logger': <Logger papyrman (DEBUG)>, 'configs': {'version': {'prog_name': 'Papyrman Server', 'version': '2.0.0'}, 'routes': {'inbox_path': 'C:\\\\Users\\\\Adalher\\\\Desktop\\\\Test_Ordner_Inbox'}, 'DB': {'dialect': 'mysql', 'db_user': 'root', 'db_password': '', 'db_host': 'localhost', 'db_port': '3306', 'db_name': 'papyrman_profiles'}, 'DB_defaults': {'varchar_length': '50'}, 'DB_profiles': {'profile_id': 'Integer, primary_key = True', 'profile_name': 'String, nullable = False', 'profile_description': 'String(2711)'}, 'DB_settings': {'setting_id': 'Integer, primary_key = True', 'setting_name': 'String', 'setting_value': 'String'}, 'DB_profile_settings': {'profile_settings_id': 'Integer, primary_key = True', 'setting_id': 'Integer, ForeignKey("DB_settings.setting_ID")', 'profile_id': 'Integer, ForeignKey("DB_profiles.profile_ID")'}, 'DB_targets': {'target_id': 'Integer, primary_key = True', 'target_name': 'String, nullable = False', 'profile_id': 'Integer, ForeignKey("DB_profiles.profile_ID")', 'target_description': 'String', 'target_type': 'String', 'target_path': 'String'}}}, db = {'logger': <Logger papyrman (DEBUG)>, 'ini': <utils.ConfigParser.ConfigParser object at 0x000001770D26ECB0>, 'dialect': 'mysql', 'db_user': 'root', 'db_password': '', 'db_host': 'localhost', 'db_port': '3306', 'db_name': 'papyrman_profiles', 'varchar_length': 50, 'connection': [False, False, OperationalError(2002, "Can't connect to server on 'localhost' (10061)")], 'engine': Engine(mysql://root:***@localhost:3306/papyrman_profiles), 'meta': MetaData(bind=Engine(mysql://root:***@localhost:3306/papyrman_profiles))}
+	| None
+	|
+2022-07-20 13:14:50,835 | ERROR |
+	| Thread-ID: 16612 | Thread-Name: MainThread
+	| Process-ID: 10716 | Process-Name: MainProcess
+	| File: CL_UI.py | Line: 42
+	| CL_UI.create_profile()
+	| Database papyrman_profiles does not exist. Use 'create-db to create your Database!
+	| None
+	|
+2022-07-20 13:18:43,347 | INFO |
+	| Thread-ID: 23012 | Thread-Name: MainThread
+	| Process-ID: 16092 | Process-Name: MainProcess
+	| File: Logger.py | Line: 26
+	| Logger.__init__()
+	| Set File-Log Level to 10
+	| None
+	|
+2022-07-20 13:18:43,348 | INFO |
+	| Thread-ID: 23012 | Thread-Name: MainThread
+	| Process-ID: 16092 | Process-Name: MainProcess
+	| File: Logger.py | Line: 27
+	| Logger.__init__()
+	| Set Terminal-Log Level to 10
+	| None
+	|
+2022-07-20 13:18:43,350 | DEBUG |
+	| Thread-ID: 23012 | Thread-Name: MainThread
+	| Process-ID: 16092 | Process-Name: MainProcess
+	| File: papyrman.py | Line: 28
+	| papyrman.__init__()
+	| {'lf': 'info', 'lt': 'warning', 'll': 'debug', 'fun': <bound method Dispatcher.cp of <dispatcher.Dispatcher object at 0x000001F42EED7D30>>}
+	| None
+	|
+2022-07-20 13:18:43,351 | INFO |
+	| Thread-ID: 23012 | Thread-Name: MainThread
+	| Process-ID: 16092 | Process-Name: MainProcess
+	| File: papyrman.py | Line: 29
+	| papyrman.__init__()
+	| Initialized Papyrman Server
+	| None
+	|
+2022-07-20 13:18:43,352 | DEBUG |
+	| Thread-ID: 23012 | Thread-Name: MainThread
+	| Process-ID: 16092 | Process-Name: MainProcess
+	| File: dispatcher.py | Line: 27
+	| dispatcher.cp()
+	| args = {'lf': 'info', 'lt': 'warning', 'll': 'debug', 'fun': <bound method Dispatcher.cp of <dispatcher.Dispatcher object at 0x000001F42EED7D30>>}
+	| None
+	|
+2022-07-20 13:18:43,354 | DEBUG |
+	| Thread-ID: 23012 | Thread-Name: MainThread
+	| Process-ID: 16092 | Process-Name: MainProcess
+	| File: dispatcher.py | Line: 120
+	| dispatcher.init_clui()
+	| 
+	| None
+	|
+2022-07-20 13:18:43,355 | INFO |
+	| Thread-ID: 23012 | Thread-Name: MainThread
+	| Process-ID: 16092 | Process-Name: MainProcess
+	| File: ConfigParser.py | Line: 8
+	| ConfigParser.__init__()
+	| Read Data from papyrman.ini
+	| None
+	|
+2022-07-20 13:18:43,358 | DEBUG |
+	| Thread-ID: 23012 | Thread-Name: MainThread
+	| Process-ID: 16092 | Process-Name: MainProcess
+	| File: DataBase.py | Line: 13
+	| DataBase.__init__()
+	| ini = {'logger': <Logger papyrman (DEBUG)>, 'configs': {'version': {'prog_name': 'Papyrman Server', 'version': '2.0.0'}, 'routes': {'inbox_path': 'C:\\\\Users\\\\Adalher\\\\Desktop\\\\Test_Ordner_Inbox'}, 'DB': {'dialect': 'mysql', 'db_user': 'root', 'db_password': '', 'db_host': 'localhost', 'db_port': '3306', 'db_name': 'papyrman_profiles'}, 'DB_defaults': {'varchar_length': '50'}, 'DB_profiles': {'profile_id': 'Integer, primary_key = True', 'profile_name': 'String, nullable = False', 'profile_description': 'String(2711)'}, 'DB_settings': {'setting_id': 'Integer, primary_key = True', 'setting_name': 'String', 'setting_value': 'String'}, 'DB_profile_settings': {'profile_settings_id': 'Integer, primary_key = True', 'setting_id': 'Integer, ForeignKey("DB_settings.setting_ID")', 'profile_id': 'Integer, ForeignKey("DB_profiles.profile_ID")'}, 'DB_targets': {'target_id': 'Integer, primary_key = True', 'target_name': 'String, nullable = False', 'profile_id': 'Integer, ForeignKey("DB_profiles.profile_ID")', 'target_description': 'String', 'target_type': 'String', 'target_path': 'String'}}}
+	| None
+	|
+2022-07-20 13:18:43,359 | DEBUG |
+	| Thread-ID: 23012 | Thread-Name: MainThread
+	| Process-ID: 16092 | Process-Name: MainProcess
+	| File: DataBase.py | Line: 216
+	| DataBase.connect_with_engine()
+	| db_name = papyrman_profiles
+	| None
+	|
+2022-07-20 13:18:43,360 | DEBUG |
+	| Thread-ID: 23012 | Thread-Name: MainThread
+	| Process-ID: 16092 | Process-Name: MainProcess
+	| File: DataBase.py | Line: 227
+	| DataBase.create_engine()
+	| db_name = papyrman_profiles
+	| None
+	|
+2022-07-20 13:18:43,404 | INFO |
+	| Thread-ID: 23012 | Thread-Name: MainThread
+	| Process-ID: 16092 | Process-Name: MainProcess
+	| File: DataBase.py | Line: 234
+	| DataBase.connect_db()
+	| Try to connect to papyrman_profiles
+	| None
+	|
+2022-07-20 13:18:47,479 | CRITICAL |
+	| Thread-ID: 23012 | Thread-Name: MainThread
+	| Process-ID: 16092 | Process-Name: MainProcess
+	| File: DataBase.py | Line: 244
+	| DataBase.connect_db()
+	| (2002, "Can't connect to server on 'localhost' (10061)") Please make sure that your DB-Server is running
+	| None
+	|
+2022-07-20 13:18:47,481 | DEBUG |
+	| Thread-ID: 23012 | Thread-Name: MainThread
+	| Process-ID: 16092 | Process-Name: MainProcess
+	| File: DataBase.py | Line: 29
+	| DataBase.__init__()
+	| papyrman_profiles is initialized. self = {'logger': <Logger papyrman (DEBUG)>, 'ini': <utils.ConfigParser.ConfigParser object at 0x000001F4316DED70>, 'dialect': 'mysql', 'db_user': 'root', 'db_password': '', 'db_host': 'localhost', 'db_port': '3306', 'db_name': 'papyrman_profiles', 'varchar_length': 50, 'connection': [False, False, OperationalError(2002, "Can't connect to server on 'localhost' (10061)")], 'engine': Engine(mysql://root:***@localhost:3306/papyrman_profiles), 'meta': MetaData(bind=Engine(mysql://root:***@localhost:3306/papyrman_profiles))}
+	| None
+	|
+2022-07-20 13:18:47,482 | DEBUG |
+	| Thread-ID: 23012 | Thread-Name: MainThread
+	| Process-ID: 16092 | Process-Name: MainProcess
+	| File: CL_UI.py | Line: 11
+	| CL_UI.__init__()
+	| ini = {'logger': <Logger papyrman (DEBUG)>, 'configs': {'version': {'prog_name': 'Papyrman Server', 'version': '2.0.0'}, 'routes': {'inbox_path': 'C:\\\\Users\\\\Adalher\\\\Desktop\\\\Test_Ordner_Inbox'}, 'DB': {'dialect': 'mysql', 'db_user': 'root', 'db_password': '', 'db_host': 'localhost', 'db_port': '3306', 'db_name': 'papyrman_profiles'}, 'DB_defaults': {'varchar_length': '50'}, 'DB_profiles': {'profile_id': 'Integer, primary_key = True', 'profile_name': 'String, nullable = False', 'profile_description': 'String(2711)'}, 'DB_settings': {'setting_id': 'Integer, primary_key = True', 'setting_name': 'String', 'setting_value': 'String'}, 'DB_profile_settings': {'profile_settings_id': 'Integer, primary_key = True', 'setting_id': 'Integer, ForeignKey("DB_settings.setting_ID")', 'profile_id': 'Integer, ForeignKey("DB_profiles.profile_ID")'}, 'DB_targets': {'target_id': 'Integer, primary_key = True', 'target_name': 'String, nullable = False', 'profile_id': 'Integer, ForeignKey("DB_profiles.profile_ID")', 'target_description': 'String', 'target_type': 'String', 'target_path': 'String'}}}, db = {'logger': <Logger papyrman (DEBUG)>, 'ini': <utils.ConfigParser.ConfigParser object at 0x000001F4316DED70>, 'dialect': 'mysql', 'db_user': 'root', 'db_password': '', 'db_host': 'localhost', 'db_port': '3306', 'db_name': 'papyrman_profiles', 'varchar_length': 50, 'connection': [False, False, OperationalError(2002, "Can't connect to server on 'localhost' (10061)")], 'engine': Engine(mysql://root:***@localhost:3306/papyrman_profiles), 'meta': MetaData(bind=Engine(mysql://root:***@localhost:3306/papyrman_profiles))}
+	| None
+	|
+2022-07-20 13:18:47,484 | ERROR |
+	| Thread-ID: 23012 | Thread-Name: MainThread
+	| Process-ID: 16092 | Process-Name: MainProcess
+	| File: CL_UI.py | Line: 42
+	| CL_UI.create_profile()
+	| Database papyrman_profiles does not exist. Use 'create-db to create your Database!
+	| None
+	|
+2022-07-20 13:19:14,358 | INFO |
+	| Thread-ID: 10760 | Thread-Name: MainThread
+	| Process-ID: 3808 | Process-Name: MainProcess
+	| File: Logger.py | Line: 26
+	| Logger.__init__()
+	| Set File-Log Level to 10
+	| None
+	|
+2022-07-20 13:19:14,359 | INFO |
+	| Thread-ID: 10760 | Thread-Name: MainThread
+	| Process-ID: 3808 | Process-Name: MainProcess
+	| File: Logger.py | Line: 27
+	| Logger.__init__()
+	| Set Terminal-Log Level to 10
+	| None
+	|
+2022-07-20 13:19:14,361 | DEBUG |
+	| Thread-ID: 10760 | Thread-Name: MainThread
+	| Process-ID: 3808 | Process-Name: MainProcess
+	| File: papyrman.py | Line: 28
+	| papyrman.__init__()
+	| {'lf': 'info', 'lt': 'warning', 'll': 'debug', 'fun': <bound method Dispatcher.cp of <dispatcher.Dispatcher object at 0x000001B8C0DD7D30>>}
+	| None
+	|
+2022-07-20 13:19:14,362 | INFO |
+	| Thread-ID: 10760 | Thread-Name: MainThread
+	| Process-ID: 3808 | Process-Name: MainProcess
+	| File: papyrman.py | Line: 29
+	| papyrman.__init__()
+	| Initialized Papyrman Server
+	| None
+	|
+2022-07-20 13:19:14,363 | DEBUG |
+	| Thread-ID: 10760 | Thread-Name: MainThread
+	| Process-ID: 3808 | Process-Name: MainProcess
+	| File: dispatcher.py | Line: 27
+	| dispatcher.cp()
+	| args = {'lf': 'info', 'lt': 'warning', 'll': 'debug', 'fun': <bound method Dispatcher.cp of <dispatcher.Dispatcher object at 0x000001B8C0DD7D30>>}
+	| None
+	|
+2022-07-20 13:19:14,365 | DEBUG |
+	| Thread-ID: 10760 | Thread-Name: MainThread
+	| Process-ID: 3808 | Process-Name: MainProcess
+	| File: dispatcher.py | Line: 120
+	| dispatcher.init_clui()
+	| 
+	| None
+	|
+2022-07-20 13:19:14,366 | INFO |
+	| Thread-ID: 10760 | Thread-Name: MainThread
+	| Process-ID: 3808 | Process-Name: MainProcess
+	| File: ConfigParser.py | Line: 8
+	| ConfigParser.__init__()
+	| Read Data from papyrman.ini
+	| None
+	|
+2022-07-20 13:19:14,369 | DEBUG |
+	| Thread-ID: 10760 | Thread-Name: MainThread
+	| Process-ID: 3808 | Process-Name: MainProcess
+	| File: DataBase.py | Line: 13
+	| DataBase.__init__()
+	| ini = {'logger': <Logger papyrman (DEBUG)>, 'configs': {'version': {'prog_name': 'Papyrman Server', 'version': '2.0.0'}, 'routes': {'inbox_path': 'C:\\\\Users\\\\Adalher\\\\Desktop\\\\Test_Ordner_Inbox'}, 'DB': {'dialect': 'mysql', 'db_user': 'root', 'db_password': '', 'db_host': 'localhost', 'db_port': '3306', 'db_name': 'papyrman_profiles'}, 'DB_defaults': {'varchar_length': '50'}, 'DB_profiles': {'profile_id': 'Integer, primary_key = True', 'profile_name': 'String, nullable = False', 'profile_description': 'String(2711)'}, 'DB_settings': {'setting_id': 'Integer, primary_key = True', 'setting_name': 'String', 'setting_value': 'String'}, 'DB_profile_settings': {'profile_settings_id': 'Integer, primary_key = True', 'setting_id': 'Integer, ForeignKey("DB_settings.setting_ID")', 'profile_id': 'Integer, ForeignKey("DB_profiles.profile_ID")'}, 'DB_targets': {'target_id': 'Integer, primary_key = True', 'target_name': 'String, nullable = False', 'profile_id': 'Integer, ForeignKey("DB_profiles.profile_ID")', 'target_description': 'String', 'target_type': 'String', 'target_path': 'String'}}}
+	| None
+	|
+2022-07-20 13:19:14,370 | DEBUG |
+	| Thread-ID: 10760 | Thread-Name: MainThread
+	| Process-ID: 3808 | Process-Name: MainProcess
+	| File: DataBase.py | Line: 216
+	| DataBase.connect_with_engine()
+	| db_name = papyrman_profiles
+	| None
+	|
+2022-07-20 13:19:14,371 | DEBUG |
+	| Thread-ID: 10760 | Thread-Name: MainThread
+	| Process-ID: 3808 | Process-Name: MainProcess
+	| File: DataBase.py | Line: 227
+	| DataBase.create_engine()
+	| db_name = papyrman_profiles
+	| None
+	|
+2022-07-20 13:19:14,418 | INFO |
+	| Thread-ID: 10760 | Thread-Name: MainThread
+	| Process-ID: 3808 | Process-Name: MainProcess
+	| File: DataBase.py | Line: 234
+	| DataBase.connect_db()
+	| Try to connect to papyrman_profiles
+	| None
+	|
+2022-07-20 13:19:18,519 | CRITICAL |
+	| Thread-ID: 10760 | Thread-Name: MainThread
+	| Process-ID: 3808 | Process-Name: MainProcess
+	| File: DataBase.py | Line: 244
+	| DataBase.connect_db()
+	| (2002, "Can't connect to server on 'localhost' (10061)") Please make sure that your DB-Server is running
+	| None
+	|
+2022-07-20 13:19:18,521 | DEBUG |
+	| Thread-ID: 10760 | Thread-Name: MainThread
+	| Process-ID: 3808 | Process-Name: MainProcess
+	| File: DataBase.py | Line: 29
+	| DataBase.__init__()
+	| papyrman_profiles is initialized. self = {'logger': <Logger papyrman (DEBUG)>, 'ini': <utils.ConfigParser.ConfigParser object at 0x000001B8C365D5A0>, 'dialect': 'mysql', 'db_user': 'root', 'db_password': '', 'db_host': 'localhost', 'db_port': '3306', 'db_name': 'papyrman_profiles', 'varchar_length': 50, 'connection': [False, False, OperationalError(2002, "Can't connect to server on 'localhost' (10061)")], 'engine': Engine(mysql://root:***@localhost:3306/papyrman_profiles), 'meta': MetaData(bind=Engine(mysql://root:***@localhost:3306/papyrman_profiles))}
+	| None
+	|
+2022-07-20 13:19:18,523 | DEBUG |
+	| Thread-ID: 10760 | Thread-Name: MainThread
+	| Process-ID: 3808 | Process-Name: MainProcess
+	| File: CL_UI.py | Line: 11
+	| CL_UI.__init__()
+	| ini = {'logger': <Logger papyrman (DEBUG)>, 'configs': {'version': {'prog_name': 'Papyrman Server', 'version': '2.0.0'}, 'routes': {'inbox_path': 'C:\\\\Users\\\\Adalher\\\\Desktop\\\\Test_Ordner_Inbox'}, 'DB': {'dialect': 'mysql', 'db_user': 'root', 'db_password': '', 'db_host': 'localhost', 'db_port': '3306', 'db_name': 'papyrman_profiles'}, 'DB_defaults': {'varchar_length': '50'}, 'DB_profiles': {'profile_id': 'Integer, primary_key = True', 'profile_name': 'String, nullable = False', 'profile_description': 'String(2711)'}, 'DB_settings': {'setting_id': 'Integer, primary_key = True', 'setting_name': 'String', 'setting_value': 'String'}, 'DB_profile_settings': {'profile_settings_id': 'Integer, primary_key = True', 'setting_id': 'Integer, ForeignKey("DB_settings.setting_ID")', 'profile_id': 'Integer, ForeignKey("DB_profiles.profile_ID")'}, 'DB_targets': {'target_id': 'Integer, primary_key = True', 'target_name': 'String, nullable = False', 'profile_id': 'Integer, ForeignKey("DB_profiles.profile_ID")', 'target_description': 'String', 'target_type': 'String', 'target_path': 'String'}}}, db = {'logger': <Logger papyrman (DEBUG)>, 'ini': <utils.ConfigParser.ConfigParser object at 0x000001B8C365D5A0>, 'dialect': 'mysql', 'db_user': 'root', 'db_password': '', 'db_host': 'localhost', 'db_port': '3306', 'db_name': 'papyrman_profiles', 'varchar_length': 50, 'connection': [False, False, OperationalError(2002, "Can't connect to server on 'localhost' (10061)")], 'engine': Engine(mysql://root:***@localhost:3306/papyrman_profiles), 'meta': MetaData(bind=Engine(mysql://root:***@localhost:3306/papyrman_profiles))}
+	| None
+	|
+2022-07-20 13:19:18,526 | ERROR |
+	| Thread-ID: 10760 | Thread-Name: MainThread
+	| Process-ID: 3808 | Process-Name: MainProcess
+	| File: CL_UI.py | Line: 42
+	| CL_UI.create_profile()
+	| Database papyrman_profiles does not exist. Use 'create-db to create your Database!
+	| None
+	|
+2022-07-20 13:19:36,603 | INFO |
+	| Thread-ID: 16132 | Thread-Name: MainThread
+	| Process-ID: 11124 | Process-Name: MainProcess
+	| File: Logger.py | Line: 26
+	| Logger.__init__()
+	| Set File-Log Level to 10
+	| None
+	|
+2022-07-20 13:19:36,604 | INFO |
+	| Thread-ID: 16132 | Thread-Name: MainThread
+	| Process-ID: 11124 | Process-Name: MainProcess
+	| File: Logger.py | Line: 27
+	| Logger.__init__()
+	| Set Terminal-Log Level to 10
+	| None
+	|
+2022-07-20 13:19:36,606 | DEBUG |
+	| Thread-ID: 16132 | Thread-Name: MainThread
+	| Process-ID: 11124 | Process-Name: MainProcess
+	| File: papyrman.py | Line: 28
+	| papyrman.__init__()
+	| {'lf': 'info', 'lt': 'warning', 'll': 'debug', 'fun': <bound method Dispatcher.cp of <dispatcher.Dispatcher object at 0x00000199C2AA7D30>>}
+	| None
+	|
+2022-07-20 13:19:36,607 | INFO |
+	| Thread-ID: 16132 | Thread-Name: MainThread
+	| Process-ID: 11124 | Process-Name: MainProcess
+	| File: papyrman.py | Line: 29
+	| papyrman.__init__()
+	| Initialized Papyrman Server
+	| None
+	|
+2022-07-20 13:19:36,608 | DEBUG |
+	| Thread-ID: 16132 | Thread-Name: MainThread
+	| Process-ID: 11124 | Process-Name: MainProcess
+	| File: dispatcher.py | Line: 27
+	| dispatcher.cp()
+	| args = {'lf': 'info', 'lt': 'warning', 'll': 'debug', 'fun': <bound method Dispatcher.cp of <dispatcher.Dispatcher object at 0x00000199C2AA7D30>>}
+	| None
+	|
+2022-07-20 13:19:36,609 | DEBUG |
+	| Thread-ID: 16132 | Thread-Name: MainThread
+	| Process-ID: 11124 | Process-Name: MainProcess
+	| File: dispatcher.py | Line: 120
+	| dispatcher.init_clui()
+	| 
+	| None
+	|
+2022-07-20 13:19:36,610 | INFO |
+	| Thread-ID: 16132 | Thread-Name: MainThread
+	| Process-ID: 11124 | Process-Name: MainProcess
+	| File: ConfigParser.py | Line: 8
+	| ConfigParser.__init__()
+	| Read Data from papyrman.ini
+	| None
+	|
+2022-07-20 13:19:36,613 | DEBUG |
+	| Thread-ID: 16132 | Thread-Name: MainThread
+	| Process-ID: 11124 | Process-Name: MainProcess
+	| File: DataBase.py | Line: 13
+	| DataBase.__init__()
+	| ini = {'logger': <Logger papyrman (DEBUG)>, 'configs': {'version': {'prog_name': 'Papyrman Server', 'version': '2.0.0'}, 'routes': {'inbox_path': 'C:\\\\Users\\\\Adalher\\\\Desktop\\\\Test_Ordner_Inbox'}, 'DB': {'dialect': 'mysql', 'db_user': 'root', 'db_password': '', 'db_host': 'localhost', 'db_port': '3306', 'db_name': 'papyrman_profiles'}, 'DB_defaults': {'varchar_length': '50'}, 'DB_profiles': {'profile_id': 'Integer, primary_key = True', 'profile_name': 'String, nullable = False', 'profile_description': 'String(2711)'}, 'DB_settings': {'setting_id': 'Integer, primary_key = True', 'setting_name': 'String', 'setting_value': 'String'}, 'DB_profile_settings': {'profile_settings_id': 'Integer, primary_key = True', 'setting_id': 'Integer, ForeignKey("DB_settings.setting_ID")', 'profile_id': 'Integer, ForeignKey("DB_profiles.profile_ID")'}, 'DB_targets': {'target_id': 'Integer, primary_key = True', 'target_name': 'String, nullable = False', 'profile_id': 'Integer, ForeignKey("DB_profiles.profile_ID")', 'target_description': 'String', 'target_type': 'String', 'target_path': 'String'}}}
+	| None
+	|
+2022-07-20 13:19:36,615 | DEBUG |
+	| Thread-ID: 16132 | Thread-Name: MainThread
+	| Process-ID: 11124 | Process-Name: MainProcess
+	| File: DataBase.py | Line: 216
+	| DataBase.connect_with_engine()
+	| db_name = papyrman_profiles
+	| None
+	|
+2022-07-20 13:19:36,617 | DEBUG |
+	| Thread-ID: 16132 | Thread-Name: MainThread
+	| Process-ID: 11124 | Process-Name: MainProcess
+	| File: DataBase.py | Line: 227
+	| DataBase.create_engine()
+	| db_name = papyrman_profiles
+	| None
+	|
+2022-07-20 13:19:36,661 | INFO |
+	| Thread-ID: 16132 | Thread-Name: MainThread
+	| Process-ID: 11124 | Process-Name: MainProcess
+	| File: DataBase.py | Line: 234
+	| DataBase.connect_db()
+	| Try to connect to papyrman_profiles
+	| None
+	|
+2022-07-20 13:19:40,710 | CRITICAL |
+	| Thread-ID: 16132 | Thread-Name: MainThread
+	| Process-ID: 11124 | Process-Name: MainProcess
+	| File: DataBase.py | Line: 244
+	| DataBase.connect_db()
+	| (2002, "Can't connect to server on 'localhost' (10061)") Please make sure that your DB-Server is running
+	| None
+	|
+2022-07-20 13:19:40,713 | DEBUG |
+	| Thread-ID: 16132 | Thread-Name: MainThread
+	| Process-ID: 11124 | Process-Name: MainProcess
+	| File: DataBase.py | Line: 29
+	| DataBase.__init__()
+	| papyrman_profiles is initialized. self = {'logger': <Logger papyrman (DEBUG)>, 'ini': <utils.ConfigParser.ConfigParser object at 0x00000199C527D570>, 'dialect': 'mysql', 'db_user': 'root', 'db_password': '', 'db_host': 'localhost', 'db_port': '3306', 'db_name': 'papyrman_profiles', 'varchar_length': 50, 'connection': [False, False, OperationalError(2002, "Can't connect to server on 'localhost' (10061)")], 'engine': Engine(mysql://root:***@localhost:3306/papyrman_profiles), 'meta': MetaData(bind=Engine(mysql://root:***@localhost:3306/papyrman_profiles))}
+	| None
+	|
+2022-07-20 13:19:40,715 | DEBUG |
+	| Thread-ID: 16132 | Thread-Name: MainThread
+	| Process-ID: 11124 | Process-Name: MainProcess
+	| File: CL_UI.py | Line: 11
+	| CL_UI.__init__()
+	| ini = {'logger': <Logger papyrman (DEBUG)>, 'configs': {'version': {'prog_name': 'Papyrman Server', 'version': '2.0.0'}, 'routes': {'inbox_path': 'C:\\\\Users\\\\Adalher\\\\Desktop\\\\Test_Ordner_Inbox'}, 'DB': {'dialect': 'mysql', 'db_user': 'root', 'db_password': '', 'db_host': 'localhost', 'db_port': '3306', 'db_name': 'papyrman_profiles'}, 'DB_defaults': {'varchar_length': '50'}, 'DB_profiles': {'profile_id': 'Integer, primary_key = True', 'profile_name': 'String, nullable = False', 'profile_description': 'String(2711)'}, 'DB_settings': {'setting_id': 'Integer, primary_key = True', 'setting_name': 'String', 'setting_value': 'String'}, 'DB_profile_settings': {'profile_settings_id': 'Integer, primary_key = True', 'setting_id': 'Integer, ForeignKey("DB_settings.setting_ID")', 'profile_id': 'Integer, ForeignKey("DB_profiles.profile_ID")'}, 'DB_targets': {'target_id': 'Integer, primary_key = True', 'target_name': 'String, nullable = False', 'profile_id': 'Integer, ForeignKey("DB_profiles.profile_ID")', 'target_description': 'String', 'target_type': 'String', 'target_path': 'String'}}}, db = {'logger': <Logger papyrman (DEBUG)>, 'ini': <utils.ConfigParser.ConfigParser object at 0x00000199C527D570>, 'dialect': 'mysql', 'db_user': 'root', 'db_password': '', 'db_host': 'localhost', 'db_port': '3306', 'db_name': 'papyrman_profiles', 'varchar_length': 50, 'connection': [False, False, OperationalError(2002, "Can't connect to server on 'localhost' (10061)")], 'engine': Engine(mysql://root:***@localhost:3306/papyrman_profiles), 'meta': MetaData(bind=Engine(mysql://root:***@localhost:3306/papyrman_profiles))}
+	| None
+	|
+2022-07-20 13:19:40,718 | ERROR |
+	| Thread-ID: 16132 | Thread-Name: MainThread
+	| Process-ID: 11124 | Process-Name: MainProcess
+	| File: CL_UI.py | Line: 42
+	| CL_UI.create_profile()
+	| Database papyrman_profiles does not exist. Use 'create-db to create your Database!
+	| None
+	|
+	INFO | Set File-Log Level to 20
+	INFO | Set Terminal-Log Level to 30
+	INFO | Initialized Papyrman Server
+	INFO | Read Data from papyrman.ini
+	INFO | Try to connect to papyrman_profiles
+	CRITICAL | (2002, "Can't connect to server on 'localhost' (10061)") Please make sure that your DB-Server is running
+	ERROR | Database papyrman_profiles does not exist. Use 'create-db to create your Database!
+	INFO | Set File-Log Level to 20
+	INFO | Set Terminal-Log Level to 30
+	INFO | Initialized Papyrman Server
+	INFO | Read Data from papyrman.ini
+	INFO | Try to connect to papyrman_profiles
+	CRITICAL | (2002, "Can't connect to server on 'localhost' (10061)") Please make sure that your DB-Server is running
+	ERROR | Database papyrman_profiles does not exist. Use 'create-db to create your Database!
+	INFO | Set File-Log Level to 20
+	INFO | Set Terminal-Log Level to 30
+	INFO | Initialized Papyrman Server
+	INFO | Read Data from papyrman.ini
+	INFO | Try to connect to papyrman_profiles
+	CRITICAL | (2002, "Can't connect to server on 'localhost' (10061)") Please make sure that your DB-Server is running
+	ERROR | Database papyrman_profiles does not exist. Use 'create-db to create your Database!
+	INFO | Set File-Log Level to 20
+	INFO | Set Terminal-Log Level to 30
+	INFO | Initialized Papyrman Server
+	INFO | Read Data from papyrman.ini
+	INFO | Try to connect to papyrman_profiles
+	CRITICAL | (2002, "Can't connect to server on 'localhost' (10061)") Please make sure that your DB-Server is running
+	INFO | Database will be created...
+	CRITICAL | Connection to DB-Server == False. Please make sure that your Server is running
+	INFO | Set File-Log Level to 20
+	INFO | Set Terminal-Log Level to 30
+	INFO | Initialized Papyrman Server
+	INFO | Read Data from papyrman.ini
+	INFO | Try to connect to papyrman_profiles
+	CRITICAL | (2002, "Can't connect to server on 'localhost' (10061)") Please make sure that your DB-Server is running
+	INFO | Connection to papyrman_profiles is being established
+	INFO | Try to connect to papyrman_profiles
+	CRITICAL | (2002, "Can't connect to server on 'localhost' (10061)") Please make sure that your DB-Server is running
+	INFO | Set File-Log Level to 20
+	INFO | Set Terminal-Log Level to 30
+	INFO | Initialized Papyrman Server
+	INFO | Read Data from papyrman.ini
+	INFO | Try to connect to papyrman_profiles
+	CRITICAL | (2002, "Can't connect to server on 'localhost' (10061)") Please make sure that your DB-Server is running
+	CRITICAL | Connection to DB-Server == False. Please make sure that your Server is running
+	INFO | Set File-Log Level to 20
+	INFO | Set Terminal-Log Level to 30
+	INFO | Initialized Papyrman Server
+	INFO | Read Data from papyrman.ini
+	INFO | Try to connect to papyrman_profiles
+	CRITICAL | (2002, "Can't connect to server on 'localhost' (10061)") Please make sure that your DB-Server is running

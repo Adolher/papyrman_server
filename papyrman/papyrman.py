@@ -23,24 +23,24 @@ class Papyrman:
 
         self.logger = self.start_logger(self.args.ll, self.args.lf, self.args.lt)
 
-        self.logger.logger.info(f"{self.args}")
-
         self.args = vars(self.args)
 
+        self.logger.logger.debug(f"{self.args}")
+        self.logger.logger.info("Initialized Papyrman Server")
+
         if 'fun' in self.args.keys():
-            self.logger.logger.info(f"{self.args}")
             self.args['fun'](self.args)
 
     def add_pars_args(self):
-        help_msg = "Specifies the Log-Level. Default is 'WARNING'"
+        help_msg = "Specifies the Log(-File)-Level. Default is 'WARNING'"
         self.parser.add_argument('-lf', '--logfile-level', choices=['debug', 'info', 'warning', 'error', 'critical'],
-                                 default='warning', type=str, help=help_msg, dest='lf')
+                                 default='info', type=str, help=help_msg, dest='lf')
 
         help_msg = "Specifies the Terminal-output. Default is 'INFO'"
         self.parser.add_argument('-lt', '--terminal-output', choices=['silent', 'debug', 'info', 'warning', 'error', 'critical'],
-                                 default='info', type=str, help=help_msg, dest='lt')
+                                 default='warning', type=str, help=help_msg, dest='lt')
 
-        help_msg = "Specifies the Log-Level and Terminal-Output."
+        help_msg = "Specifies the Log(-File)-Level and Terminal-Output."
         self.parser.add_argument('-ll', '--log-level', choices=['silent', 'debug', 'info', 'warning', 'error', 'critical'],
                                  default=None, type=str, help=help_msg, dest='ll')
 
