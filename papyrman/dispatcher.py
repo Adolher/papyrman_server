@@ -11,7 +11,6 @@ from utils import ConfigParser
 class Dispatcher:
     def __init__(self):
         self.logger = logging.getLogger('papyrman')
-        self.logger.info("")
         self.ini = None
         self.db = None
         self.clui = None

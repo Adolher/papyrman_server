@@ -23,8 +23,6 @@ class Papyrman:
 
         self.logger = self.start_logger(self.args.ll, self.args.lf, self.args.lt)
 
-
-
         self.logger.logger.info(f"{self.args}")
 
         self.args = vars(self.args)
@@ -46,10 +44,11 @@ class Papyrman:
         self.parser.add_argument('-ll', '--log-level', choices=['silent', 'debug', 'info', 'warning', 'error', 'critical'],
                                  default=None, type=str, help=help_msg, dest='ll')
 
-        parser_version = self.subparsers.add_parser('version', help='shows version')
+        help_msg = "shows the version of Papyrman-Server"
+        parser_version = self.subparsers.add_parser('version', help=help_msg)
         parser_version.set_defaults(fun=self.dispatcher.version)
 
-        help_msg = "Shows your Inifile.ini"
+        help_msg = "Shows your ini-file.ini"
         parser_sini = self.subparsers.add_parser('ini', help=help_msg)
         parser_sini.set_defaults(fun=self.dispatcher.sini)
 
@@ -57,57 +56,57 @@ class Papyrman:
         parser_cp = self.subparsers.add_parser('create-profile', help=help_msg)
         parser_cp.set_defaults(fun=self.dispatcher.cp)
 
-        help_msg = "HELP"
+        help_msg = "Shows a list of all Profiles"
         parser_sps = self.subparsers.add_parser('show-profiles', help=help_msg)
         parser_sps.set_defaults(fun=self.dispatcher.sps)
 
-        help_msg = "HELP"
+        help_msg = "'papyrman.py show-profile -id <profile_id>' -> shows the specified profile"
         parser_sp = self.subparsers.add_parser('show-profile', help=help_msg)
         parser_sp.add_argument('-id', type=int, dest='id', required=True)
         parser_sp.set_defaults(fun=self.dispatcher.sp)
 
-        help_msg = "HELP"
+        help_msg = "'papyrman.py delete-profile -id <profile_id>' -> delete the specified profile"
         parser_dp = self.subparsers.add_parser('delete-profile', help=help_msg)
         parser_dp.add_argument('-id', type=int, required=True)
         parser_dp.set_defaults(fun=self.dispatcher.dp)
 
-        help_msg = "HELP"
+        help_msg = "'papyrman.py edit-profile -id <profile_id>' -> edit the specified profile"
         parser_ep = self.subparsers.add_parser('edit-profile', help=help_msg)
         parser_ep.add_argument('-id', type=int, required=True)
         parser_ep.set_defaults(fun=self.dispatcher.ep)
 
-        help_msg = "HELP"
+        help_msg = "'papyrman.py add-target-to -id <profile_id>' -> add a target to the specified profile"
         parser_att = self.subparsers.add_parser('add-target-to', help=help_msg)
         parser_att.add_argument('-id', type=int, required=True)
         parser_att.set_defaults(fun=self.dispatcher.att)
 
-        help_msg = "HELP"
+        help_msg = "'papyrman.py edit-target -id <target_id>' -> edit the specified target"
         parser_et = self.subparsers.add_parser('edit-target', help=help_msg)
         parser_et.add_argument('-id', type=int, required=True)
         parser_et.set_defaults(fun=self.dispatcher.et)
 
-        help_msg = "HELP"
+        help_msg = "'papyrman.py delete-target -id <target_id>' -> delete the specified target"
         parser_dt = self.subparsers.add_parser('delete-target', help=help_msg)
         parser_dt.add_argument('-id', type=int, required=True)
         parser_dt.set_defaults(fun=self.dispatcher.dt)
 
-        help_msg = "HELP"
+        help_msg = "create a Database accordance your settings in papyrman.ini"
         parser_crdb = self.subparsers.add_parser('create-db', help=help_msg)
         parser_crdb.set_defaults(fun=self.dispatcher.crdb)
 
-        help_msg = "HELP"
+        help_msg = "connect to the Database"
         parser_codb = self.subparsers.add_parser('connect-db', help=help_msg)
         parser_codb.set_defaults(fun=self.dispatcher.codb)
 
-        help_msg = "HELP"
+        help_msg = "delete the Database"
         parser_ddb = self.subparsers.add_parser('drop-db', help=help_msg)
         parser_ddb.set_defaults(fun=self.dispatcher.ddb)
 
-        help_msg = "HELP"
+        help_msg = "run the Observer"
         parser_r = self.subparsers.add_parser('run', help=help_msg)
         parser_r.set_defaults(fun=self.dispatcher.run)
 
-        help_msg = "HELP"
+        help_msg = "stops the Observer"
         parser_s = self.subparsers.add_parser('stop', help=help_msg)
         parser_s.set_defaults(fun=self.dispatcher.stop)
 
