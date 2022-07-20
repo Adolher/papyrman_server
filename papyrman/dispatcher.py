@@ -129,4 +129,6 @@ class Dispatcher:
 
     def version(self, *args):
         self.logger.info(f"{args}")
-        print("version nummer sonstwas")    # ToDo: version aus ini lesen; mit argparse-version realisieren
+        if self.ini is None:
+            self.ini = ConfigParser('papyrman.ini')
+        print(" Papyrman-Server Version " + self.ini.configs['version']['version'])
